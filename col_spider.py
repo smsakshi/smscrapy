@@ -5,6 +5,10 @@ from scrapy import Request
 
 class COLSpider(scrapy.Spider):
     name = 'col'
+    custom_settings = {
+        'FEED_FORMAT': 'csv',
+        'FEED_URI': 'test.csv'
+    }
     RegionID = 4
     start_urls = ['http://dtemaharashtra.gov.in/frmInstituteList.aspx?RegionID=3&RegionName=Mumbai'
 
