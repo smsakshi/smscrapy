@@ -1,6 +1,7 @@
 import scrapy
 from scrapy import Request
-
+from scrapy.crawler import CrawlerProcess
+ #SITENAME : DTEMAHARASHTRA.GOV.IN (4 URLS FROM THESE PARENT SITE SCRAPED USING BELOW CODE)
 
 
 class COLSpider(scrapy.Spider):
@@ -75,6 +76,9 @@ class COLSpider(scrapy.Spider):
 
             yield response.follow(next_page, callback = self.parse)
 
+process = CrawlerProcess()
+process.crawl(COLSpider)
+process.start()
 
 
 
